@@ -8,6 +8,10 @@ use App\Models\Experience;
 use App\Models\Skill;
 use App\Models\Certification;
 
+Route::get('/health', function () {
+    return response()->json(['status' => 'ok', 'timestamp' => now()]);
+});
+
 Route::get('/', function () {
     return Inertia::render('home', [
         'projects' => Project::where('status', 'published')->orderBy('year', 'desc')->get(),

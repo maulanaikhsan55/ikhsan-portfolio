@@ -87,8 +87,8 @@ export default function Form({ experience }: { experience?: Experience }) {
                         disabled={processing}
                         onClick={handleSubmit}
                         className={`px-8 py-6 rounded-2xl font-black uppercase tracking-widest transition-all shadow-xl shadow-black/10 ${Object.keys(errors).length > 0
-                                ? 'bg-rose-500 text-white hover:bg-rose-600'
-                                : 'bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 hover:scale-105'
+                            ? 'bg-rose-500 text-white hover:bg-rose-600'
+                            : 'bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 hover:scale-105'
                             }`}
                     >
                         <Save size={18} className="mr-2" />
