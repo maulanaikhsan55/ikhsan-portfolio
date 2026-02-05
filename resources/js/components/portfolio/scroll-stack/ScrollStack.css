@@ -1,0 +1,52 @@
+.scroll-stack-scroller {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Only apply overflow/height constraints if we are NOT using window scroll (optional, but for now let's just clean it up) */
+.scroll-stack-scroller[data-window-scroll="false"] {
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* Hide scrollbar for cleaner look */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.scroll-stack-scroller[data-window-scroll="false"]::-webkit-scrollbar {
+    display: none;
+}
+
+.scroll-stack-inner {
+    width: 100%;
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 20vh;
+    /* Ensure space for last item to scroll away */
+}
+
+.scroll-stack-card {
+    position: relative;
+    /* JS handles sticky/pinning behavior via transforms */
+    top: 0;
+    width: 100%;
+    transform-origin: top center;
+    will-change: transform, filter;
+    /* Premium card styling base */
+    border-radius: 2rem;
+    box-shadow:
+        0 20px 40px -5px rgba(0, 0, 0, 0.1),
+        0 10px 20px -5px rgba(0, 0, 0, 0.05);
+}
+
+.scroll-stack-card>* {
+    width: 100%;
+    height: 100%;
+}
+
+.scroll-stack-end {
+    height: 50vh;
+    width: 100%;
+    pointer-events: none;
+}
